@@ -1,3 +1,3 @@
 window.onload = function() {
-  alert('yaya');
+  alert('Hello, great world');
 };
