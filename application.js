@@ -6,8 +6,19 @@ window.onload = function() {
 
 
   var repaint = function() {
-    context.fillStyle = "rgba(0, 255, 0, 0.5)";
+    context.fillStyle = "rgba(0, 255, 0, 0.1)";
     context.fillRect(0,0,canvas.width, canvas.height);
+
+    var x = Math.random() * canvas.width;
+    var y = Math.random() * canvas.height;
+    var size = Math.random() * 30;
+
+
+    context.fillStyle = "rgba(0, 0, 255, 0.5)";
+    context.fillRect(x,y, size, size);
+
+    setTimeout(repaint, 100);
+
   };
 
 
