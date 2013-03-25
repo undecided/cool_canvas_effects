@@ -3,6 +3,7 @@ window.onload = function() {
   var context = canvas.getContext('2d');
   document.body.appendChild(canvas);
 
+  var my_timeout = false;
 
 
   var repaint = function() {
@@ -16,13 +17,14 @@ window.onload = function() {
     context.fillStyle = "rgb(0, 128, 255)";
     context.fillRect(random_x, random_y, random_size, random_size);
 
-    setTimeout(repaint, 100);
+    my_timeout = setTimeout(repaint, 100);
   };
 
 
   var resize = function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    if(my_timeout) { clearTimeout(my_timeout); }
     repaint();
   };
 
