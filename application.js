@@ -1,1 +1,3 @@
-alert('All present and correct, sir')
+window.onload = function() {
+  alert('yaya');
+};
